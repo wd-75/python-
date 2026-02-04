@@ -1,6 +1,7 @@
 
 #start my function 
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import HttpResponse, render, redirect
+from django.contrib import messages
 
 def services(request):
     return HttpResponse("Welcome to the services page!")
@@ -316,3 +317,15 @@ def shop(request):
     }
 
     return render(request, "index.html", context)
+
+
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        messages.success(request, 'Thank you for contacting us! We will get back to you soon.')
+        return redirect('contact')
+    return render(request, "contact.html")
