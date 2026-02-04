@@ -173,7 +173,7 @@ def shop(request):
     "name": "Dell XPS 13",
     "price": "$999.99",
     "in_stock": False,
-    "description": "Premium ultrabook with InfinityEdge display.",
+    "description": "Premium Ultrabook with InfinityEdge display.",
     "image_url": "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -302,7 +302,7 @@ def shop(request):
     "description": "Reliable smartphone with strong build quality.",
     "image_url": "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80"
     },
-]
+    ]
 
     # return HttpResponse(f"<h1>Welcome to the shop page! </h1><P>Enjoy your shopping.</P> <h2> products <h2>{product_list}")
     # return render(request, "index.html", {})
