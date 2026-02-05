@@ -3,12 +3,23 @@
 from django.shortcuts import HttpResponse, render, redirect
 from django.contrib import messages
 
+from shop.models import Student
+
 def services(request):
     return HttpResponse("Welcome to the services page!")
 
 
 import random 
 random_data = random.randint(100, 1000)
+
+from shop.models import Student 
+#student list 
+def student_list(request):
+    Students = Student.objects.filter(verified=True) 
+    list(Students)
+    print(Students)
+    context ={'students': Students}
+    return render(request, "student_list.html", context)
 
 def home(request):
     return HttpResponse(f"Random Number is {random_data}")
