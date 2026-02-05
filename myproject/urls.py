@@ -11,4 +11,5 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('shop/', shop, name='shop'),
     path('student_list/', student_list, name='student_list'),
+    path('product_list/', product_list, name='product_list'),
 ]

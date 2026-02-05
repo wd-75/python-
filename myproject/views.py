@@ -12,6 +12,10 @@ def services(request):
 import random 
 random_data = random.randint(100, 1000)
 
+
+
+
+
 from shop.models import Student 
 #student list 
 def student_list(request):
@@ -20,6 +24,21 @@ def student_list(request):
     print(Students)
     context ={'students': Students}
     return render(request, "student_list.html", context)
+
+from shop.models import Product
+def product_list(request):
+    products = Product.objects.all()
+    list(products)
+    print(products)
+    context = {'products': products}
+    return render(request, "product_list.html", context)
+
+
+
+
+
+
+
 
 def home(request):
     return HttpResponse(f"Random Number is {random_data}")

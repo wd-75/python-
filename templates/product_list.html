@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold mb-6 text-gray-800">Product List</h1>
+{% for product in products %}
+    <!-- Product Card -->
+    <div class="bg-white rounded-lg shadow p-5 mb-4">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-xl font-semibold text-gray-900">{{ product.title }}</h2>
+        <span class="text-green-600 font-bold">${{ product.price }}</span>
+      </div>
+
+      <p class="text-gray-600 text-sm mb-2">
+        {{ product.short_description }}
+      </p>
+
+      <div class="flex items-center gap-4 text-sm mb-3">
+        <span class="px-3 py-1 rounded-full bg-green-100 text-green-700">
+            In Stock: {{ product.stock }}
+        </span>
+      </div>
+
+      <p class="text-gray-700 text-sm">
+        {{ product.description }}
+      </p>
+    </div>
+{% endfor %}
+   
+
+  </div>
+
+</body>
+</html>
