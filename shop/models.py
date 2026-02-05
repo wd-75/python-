@@ -22,6 +22,7 @@ class Product(models.Model):
     short_description = models.CharField(max_length=500)
     stock = models.IntegerField()
     description = models.TextField(null=True, blank=True)
+    verified = models.BooleanField(default=False)    
     
     def __str__(self):
         return self.title
